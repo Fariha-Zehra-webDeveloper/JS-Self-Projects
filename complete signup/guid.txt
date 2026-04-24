@@ -1,0 +1,17 @@
+selection 
+input fields
+signup form
+signbtn
+successbox 
+errorbox
+errormsg
+closeerrorbtn
+
+signbtn apply event listener on this btn 
+first check all the fields are filled or not if they arent then show error msg with errorbox
+and if feilds are filled but passwords donot matched then also get error
+and when every thing will be fine then do click signup then show success box 
+
+closebtn
+
+func  show error msg chneg text in this

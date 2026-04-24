@@ -1,0 +1,140 @@
+// signup form
+let signupForm = document.querySelector("#signup-form");
+//input fields
+let username = document.querySelector("#user"); 
+let email = document.querySelector("#email");
+let signupPass = document.querySelector("#pass");
+let confirmPass = document.querySelector("#conf-pass");
+//toggleEye
+let loginEye = document.querySelector("#login-eye");
+let signupEye = document.querySelector("#signup-eye");
+let confEye = document.querySelector("#conf-eye");
+//signupbtn
+let signupBtn = document.querySelector(".sign-btn");
+//errorBox
+let errorBox = document.querySelector("#error-box");
+let errorMsg = document.querySelector("#error-msg");
+let closeError = document.querySelector("#close-error");
+//succesbox
+let successBox = document.querySelector("#success-box");
+let successMsg = document.querySelector("#success-msg");
+//login
+let account = document.querySelector(".account");
+let loginForm = document.querySelector("#login-form");
+//login btn
+let loginBtn = document.querySelector(".login-btn");
+let loginUser = document.querySelector("#login-user"); 
+let loginPass = document.querySelector("#login-pass");
+//forget
+let forgetForm = document.querySelector("#forget-form");
+let forgetEmail = document.querySelector("#forget-email");
+let pForget = document.querySelector(".p-forget");
+let sign = document.querySelector(".sign");
+let backLogin = document.querySelector(".back-to-login");
+let resetBtn = document.querySelector("#reset-btn");
+let continueBtn = document.querySelector("#continue-btn");
+
+
+signupBtn.addEventListener("click",function(e){
+   e.preventDefault();
+   let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+   if(username.value.trim() === "" || email.value.trim() === "" || signupPass.value === "" || confirmPass.value === ""){
+    showError("fill all fields first",signupForm);
+    signupForm.style.display = "none";
+   }else if(signupPass.value !== confirmPass.value){
+    showError("password do not matched",signupForm);
+    signupForm.style.display = "none";
+   } else if(!emailPattern.test(email.value.trim())){
+      showError("Please enter a valid email address",signupForm);
+   }
+   else{
+const userData = {
+   username:username.value.trim(),
+   userEmail: email.value.trim(),
+   signupPass : signupPass.value
+};
+localStorage.setItem("storedUser",JSON.stringify(userData));
+    successBox.style.display = "flex";
+    signupForm.style.display = "none";
+   }
+});
+closeError.addEventListener("click",function(){
+   currentForm.style.display = "flex";
+   errorBox.style.display = "none";
+});
+loginEye.addEventListener("click",function(){
+   loginPass.type = loginPass.type === "password" ? "text" : "password";
+   this.classList.toggle("fa-eye");
+   this.classList.toggle("fa-eye-slash");
+});
+signupEye.addEventListener("click",function(){
+  signupPass.type = signupPass.type === "password" ? "text" : "password";
+  this.classList.toggle("fa-eye");
+  this.classList.toggle("fa-eye-slash");
+});
+confEye.addEventListener("click",function(){
+ confirmPass.type = confirmPass.type === "password" ? "text" : "password";
+ this.classList.toggle("fa-eye");
+ this.classList.toggle("fa-eye-slash");
+});
+account.addEventListener("click",function(e){
+   e.preventDefault();
+loginForm.style.display = "flex";
+signupForm.style.display = "none";
+});
+loginBtn.addEventListener("click",function(e){
+ e.preventDefault();
+ let savedData = JSON.parse(localStorage.getItem("storedUser"));
+ if(loginUser.value.trim() === "" || loginPass.value === ""){
+   showError("Enter both fields",loginForm);
+   loginForm.style.display = "none";
+   currentForm = loginForm;
+ }else if(savedData && loginUser.value.trim() === savedData.username && loginPass.value === savedData.signupPass){
+   successBox.style.display = "flex";
+   successMsg.innerText = "login successful";
+   loginForm.style.display = "none";
+ }else{
+   showError("Invalid Username or Password!",loginForm);
+ }
+});
+sign.addEventListener("click",function(e){
+   e.preventDefault();
+   signupForm.style.display = "flex";
+   loginForm.style.display = "none";
+});
+pForget.addEventListener("click",function(e){
+  e.preventDefault();
+  loginForm.style.display = "none";
+  forgetForm.style.display = "flex";
+});
+backLogin.addEventListener("click",function(e){
+ e.preventDefault();
+ forgetForm.style.display = "none";
+ loginForm.style.display = "flex";  
+});
+resetBtn.addEventListener("click",function(e){
+   e.preventDefault();
+   if(forgetEmail.value.trim() === ""){
+       showError("write an email",forgetForm);
+       forgetForm.style.display = "none";
+   }else
+  if(forgetEmail.value.trim() !== ""){
+    successBox.style.display = "flex";
+    forgetForm.style.display = "none";
+    successMsg.innerText = "rest is done";
+  }
+});
+continueBtn.addEventListener("click",function(e){
+   e.preventDefault();
+   loginForm.style.display = "flex";
+   successBox.style.display = "none";
+});
+function showError(msg,formThatHasError){
+   errorBox.style.display = "flex";
+   errorMsg.innerText = msg;
+   formThatHasError.style.display = "none";
+   currentForm = formThatHasError;
+}
+
+
+
