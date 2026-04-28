@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { 
+            transition: background 0.5s ease; 
+            height: 100vh; 
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+         }
+        .container { 
+            display: flex; 
+            gap: 15px; 
+        }
+        .tile { 
+            padding: 15px 25px; 
+            cursor: pointer; 
+            border: none; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            color: white;
+        }
+        .tile {
+    transition: all 0.3s ease; /* Smooth effect ke liye */
+    opacity: 0.6; /* Shuru mein thora dhundla */
+}
+
+/* Jab button active ho */
+.tile.active {
+    opacity: 1;
+    transform: scale(1.1); /* Thora bara ho jaye */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* Glow effect */
+    border: 2px solid white;
+}
+
+/* Inke background colors wahi rakhein jo data-color mein hain */
+.tile[data-color="crimson"] { background: crimson; }
+.tile[data-color="teal"] { background: teal; }
+.tile[data-color="gold"] { background: gold; }
+.tile[data-color="slateblue"] { background: slateblue; }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <button class="tile" data-color="crimson">Crimson</button>
+    <button class="tile" data-color="teal">Teal</button>
+    <button class="tile" data-color="gold">Gold</button>
+    <button class="tile" data-color="slateblue">Slate Blue</button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
