@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Safari Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+    <h1 class="game-title">Sound Safari</h1>
+   
+    <div class="hud-container">
+        <span class="score">Score: 0</span>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        <div class="led-light"></div>
+    </div>
+
+    <div class="cards-container">
+        <div class="animal-card" data-animal="CAT 🐱" data-color="#ff9f43" data-sound="./dragon-studio-cat-meow-401729.mp3">
+            <div class="card-bg" style="background-image: url('./cat.webp');"></div>
+            <div class="card-content">
+                <span class="emoji">🐱</span>
+                <span class="name">Cat</span>
+                <div class="waveform-container">
+                  <img src="./wave.png" class="waveform-img">
+                 </div>
+            </div>
+        </div>
+
+        <div class="animal-card" data-animal="DOG 🐶" data-color="#f5f6fa" data-sound="./dog-barking-sound.mp3">
+            <div class="card-bg" style="background-image: url('./dog.avif');"></div>
+            <div class="card-content">
+                <span class="emoji">🐶</span>
+                <span class="name">Dog</span>
+                <div class="waveform-container">
+                   <img src="./wave.png" class="waveform-img">
+                </div>
+            </div>
+        </div>
+
+        <div class="animal-card" data-animal="LION 🦁" data-color="#DAA520" data-sound="./lion-roaring-sound.mp3">
+            <div class="card-bg" style="background-image: url('./lion-roar.webp');"></div>
+            <div class="card-content">
+                <span class="emoji">🦁</span>
+                <span class="name">Lion</span>
+                <div class="waveform-container">
+                     <img src="./wave.png" class="waveform-img">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <h2 id="display-name" class="center-display">Click to Roar!</h2>
+    <button id="stop-btn">Stop & Reset Score 🛑</button>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
