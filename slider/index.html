@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            background-color:black;
+            width: 100%;
+            display: grid;
+            place-items: center;
+        }
+        .slider-container {
+    width: 600px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Image kharab nahi hogi */
+    transition: 0.5s ease;
+}
+button {
+    position: absolute;
+    top: 50%; /* Image ke bilkul beech mein */
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Thora transparent black */
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+#prev {
+    left: 10px; /* Left side par chipka hua */
+}
+
+#next {
+    right: 10px; /* Right side par chipka hua */
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Hover par thora dark */
+}
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+    <div class="slide">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" id="image" alt="nature">
+    </div>
+    <button id="prev">Prev</button>
+    <button id="next">Next</button>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
