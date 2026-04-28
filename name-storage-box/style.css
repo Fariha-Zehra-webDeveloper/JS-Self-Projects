@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(rgba(42, 10, 42, 0.5), rgba(18, 18, 18, 0.5)), 
+              url('https://static.vecteezy.com/system/resources/thumbnails/047/513/740/small/purple-flowers-at-sunset-by-the-water-photo.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+
+.storage-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+h2 { 
+  color: #f8f1f8; 
+  margin-bottom: 25px;
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.5); 
+}
+
+.form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+#userInput {
+  flex: 1;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  color: #ffffff; 
+  outline: none;
+  font-size: 1rem;
+}
+
+#userInput::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: 0 0 20px rgba(255, 0, 255, 0.6);
+}
+
+#userInput:focus { 
+  border-color: #950595;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#addBtn {
+  padding: 12px 24px;
+  background: #510451; 
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px rgba(212, 0, 212, 0.4);
+}
+
+#addBtn:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.6);
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.card:hover { 
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ffffff; 
+  text-shadow: 0 0 20px rgba(255, 0, 255, 0.6);
+}
+
+.del-btn {
+  background: rgba(133, 3, 131, 0.607);
+  color: #fbf3fd;
+  border: 1px solid rgba(86, 2, 90, 0.533);
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
+
+.del-btn:hover {
+  background: rgba(71, 2, 85, 0.77);
+  color: white;
+}
+.edit-btn{
+  background: rgba(133, 3, 131, 0.607);
+  color: #fbf3fd;
+  border: 1px solid rgba(86, 2, 90, 0.533);
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
+.edit-btn:hover {
+  background: rgba(71, 2, 85, 0.77);
+  color: white;
+}
