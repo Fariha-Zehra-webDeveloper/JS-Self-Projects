@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial Section</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+      <header>
+    <div class="heading">
+       <div class="image-overlay" style="
+    background: url('./bgtop.png') no-repeat center center / cover; 
+    position: relative; 
+    width: 100%; 
+    height: 20rem; 
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);">
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(252, 250, 250, 0.278);"></div>
+</div>
+</div>
+       <div class="ovrlay-content">
+            <h1>What Our Clients Says</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, deleniti.</p>
+          <div class="btn">
+              <a href="#">Testimonial</a>
+          </div>
+         
+       </div>
+      </header>
+       <section class="mid">
+    <button class="custom-prev">&#8592;</button>
+    <div class="carousel-track-wrapper">
+        <div class="carousel-track" id="carouselTrack">
+            <div class="reviews-box">
+                <span class="no">01.</span>
+                <div class="star">★★★★★</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit error quis, aliquam sequi.</p>
+                <div class="user"><h2>Elizabeth</h2><p>Chicago</p></div>
+            </div>
+            <div class="reviews-box">
+                <span class="no">02.</span>
+                <div class="star">★★★★★</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit error quis, aliquam sequi.</p>
+                <div class="user"><h2>Catherine</h2><p>New York</p></div>
+            </div>
+            <div class="reviews-box">
+                <span class="no">03.</span>
+                <div class="star">★★★★★</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit error quis, aliquam sequi.</p>
+                <div class="user"><h2>Victoria</h2><p>Washington, DC</p></div>
+            </div>
+        </div>
+    </div>
+    <button class="custom-next">&#8594;</button>
+</section>
+
+  <section class="add-Review">
+<div class="left-middle">
+     <div class="left-review">
+        <h3 class="viewIt">4.8 <span>out of 5</span></h3>
+       <div class="overall-stars">
+    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+</div>
+        <p class="review-count">(107 Reviews)</p>
+    </div>
+     <div class="reviews-strips">
+        <h2 class="review-heading">Review</h2>
+        <div class="strip-row">
+            <span>5 Star</span>
+            <div class="bar-bg"><div class="bar-fill" style="width:80%"></div></div>
+        </div>
+        <div class="strip-row">
+            <span>4 Star</span>
+            <div class="bar-bg"><div class="bar-fill" style="width:60%"></div></div>
+        </div>
+        <div class="strip-row">
+            <span>3 Star</span>
+            <div class="bar-bg"><div class="bar-fill" style="width:30%"></div></div>
+        </div>
+        <div class="strip-row">
+            <span>2 Star</span>
+            <div class="bar-bg"><div class="bar-fill" style="width:15%"></div></div>
+        </div>
+        <div class="strip-row">
+            <span>1 Star</span>
+            <div class="bar-bg"><div class="bar-fill" style="width:8%"></div></div>
+        </div>
+    </div>
+</div>
+    <!-- RIGHT: Add Review Form -->
+    <div class="right-review">
+        <h2>Add a Review</h2>
+        <div class="rating-row">
+            <p>Add Your Rating <span class="required">*</span></p>
+            <div class="rating-stars">
+                <span class="star-btn" data-val="1">☆</span>
+                <span class="star-btn" data-val="2">☆</span>
+                <span class="star-btn" data-val="3">☆</span>
+                <span class="star-btn" data-val="4">☆</span>
+                <span class="star-btn" data-val="5">☆</span>
+            </div>
+        </div>
+        <div class="input-grp">
+            <label>Name <span class="required">*</span></label>
+            <input type="text" id="name" placeholder="John Doe">
+        </div>
+        <div class="input-grp">
+            <label>Email <span class="required">*</span></label>
+            <input type="email" id="email" placeholder="JohnDoe@gmail.com">
+        </div>
+        <div class="input-grp">
+    <label>Location <span class="required">*</span></label>
+    <input type="text" id="location" placeholder="New York">
+</div>
+        <div class="input-grp">
+            <label>Write Your Review <span class="required">*</span></label>
+            <textarea id="review" placeholder="Write here..." rows="4"></textarea>
+        </div>
+        <button class="submit-btn" type="submit">Submit</button>
+    </div>
+
+</section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
