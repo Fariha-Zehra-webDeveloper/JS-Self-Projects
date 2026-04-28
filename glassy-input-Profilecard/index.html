@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassy Cards</title>
+   
+    <style>
+        * { margin: 0; 
+            padding: 0; 
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif; }
+        
+       #main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    background: linear-gradient(rgba(0, 18, 66, 0.4), rgba(0, 18, 66, 0.4)), 
+                url('https://img.freepik.com/premium-photo/background-flower-butterfly-spring-garden-floral-beauty-blossom-plant-blue-garden-spring-butterfly_1117469-11804.jpg'); /* Yahan apni image ka path dein */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background: rgba(255, 255, 255, 0.2);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+        input::placeholder{
+            color: #c3f8ff;
+        }
+
+        input[type="submit"]:hover { background: #044980; border-color: #c3f8ff; }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .card {
+            flex: 1 1 calc(25% - 20px);
+            max-width: 300px;
+            min-width: 260px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 20px;
+            padding: 30px;
+            color: white;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.2); }
+.card img { 
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+    border: 2px solid white; 
+    margin-bottom: 15px; 
+    object-fit: cover; 
+    object-position: center; 
+}
+.del-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px 20px; /* Submit button jaisi padding */
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.4s;
+    outline: none;
+}
+
+.del-btn:hover {
+   background: #044980; border-color: #c3f8ff;
+}
+    </style>
+
+
+</head>
+<body>
+    <div id="main">
+        <form class="form">
+            <input class="inpt-grp" id="name" type="text" placeholder="name">
+            <input class="inpt-grp" id="img" type="text" placeholder="img">
+            <input class="inpt-grp" id="info" type="text" placeholder="info">
+            <input class="btn" type="submit">
+        </form>
+         <div id="display-area" class="cards-container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
