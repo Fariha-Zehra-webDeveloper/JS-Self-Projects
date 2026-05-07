@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./assest/css/sign.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up" id="signup">
+            <form class="signup">
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google"></i></a>
+                </div>
+                <span>or use your email for registeration</span>
+                  <div class="photo-upload-row">
+        <div class="avatar-circle" id="avatarPreview">
+            <span id="initials">?</span>
+        </div>
+        <div class="photo-label">
+            <strong>Profile Photo</strong>
+            <span class="upload-link">Click to upload</span>
+            <br>
+        </div>
+    </div>
+    <input type="file" id="photoInput" accept="image/*"  style="display:none">
+        <div class="input-grp">
+                <input type="text" placeholder="Name" id="signupName">
+                <p class="error-msg"></p>
+        </div>
+         <div class="input-grp">
+                <input type="email" placeholder="Email" id="signupEmail">
+                <p class="error-msg"></p>
+         </div>
+           <div class="input-grp">
+               <input type="password" placeholder="Password" id="signupPass">
+                <p class="error-msg"></p>
+           </div>     
+                <button id="signBtn">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in" id="login">
+            <form class="login">
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google"></i></a>
+                </div>
+                <span>or use your email password</span>
+                <div class="input-grp">
+                   <input type="email" placeholder="Email" id="loginEmail">
+                   <p class="error-msg"></p>
+                </div>
+               <div class="input-grp">
+                    <input type="password" placeholder="Password" id="loginPass">
+                    <p class="error-msg"></p>
+               </div>
+                <a href="#" id="forgotlink">Forget Your Password?</a>
+                <button id="login-Btn">Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                            <h1>Welcome Back!</h1>
+                            <p>Enter your personal details to use all of site features</p>
+                          <button class="hidden" id="loginToggle">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button class="hidden1" id="registerToggle">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="forgetModal" class="hiddenn">
+    <div class="modal-content">
+        <h3>Recover Password</h3>
+        <p>Enter details to reset your password</p>
+        
+        <div class="input-group">
+            <input type="email" id="recoveryEmail" placeholder="Enter your Email">
+            <input type="text" id="recoveryName" placeholder="Enter your Full Name">
+        </div>
+
+        <div class="modal-btns">
+            <button id="checkUserBtn">Reset Password</button>
+            <button id="closeModal">Cancel</button>
+        </div>
+    </div>
+    <div id="customAlert" class="alert-overlay hiddenn">
+    <div class="alert-box">
+        <i class="fa-solid fa-gears"></i>
+        <h3>Feature Coming Soon!</h3>
+        <p>Google Login is currently under development. Please use the manual Sign Up for now! 😊</p>
+        <button id="closeAlert">Got it!</button>
+    </div>
+</div>
+    <script src="./js/logic.js"></script>
+    <script src="./js/sign.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="./assest/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+     <button class="hamburger-icon" id="hamburgerBtn">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="container">
+        <div class="sidebar">
+            <div class="user-info">
+                  <div class="img" id="userAvatar">
+                  <img src="https://i.pravatar.cc/100" alt="avatar">
+            </div>
+            <div class="data">
+                <h2 class=" name" id="userName">John Doe</h2>
+                <p class="email" id="userEmail">johndoe@gmail.com</p>
+            </div>
+            </div>
+            <hr>
+            <div class="nav-item">
+                <div class="myTasks">
+                     <i class="fa-solid fa-bars-progress"></i>
+                     <span>My Tasks</span>
+                </div>
+                <div class="setting">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </div>
+                <div class="logout" id="logoutBtn">
+                     <i class="fa-solid fa-right-from-bracket"></i>
+                  <span>Logout</span>
+               </div>
+            </div>
+        </div>
+        <div class="main-content">
+                <div class="theme-toggle">
+             <button class="moon" id="themeBtn">
+                <i class="fa-regular fa-moon"></i>
+             </button>
+        </div>
+        <div class="main">
+            <div class="todolistapp">
+                     <h1 class="heading">To Do List</h1>
+         <div class="addtask">
+            <input type="text" id="taskInput" class="task" placeholder="Type your task here..">
+            <button class="addbtn" id="addBtn"> <i class="fa-solid fa-plus"></i> Add</button>
+         </div>
+         <div class="filters">
+            <div class="filter-links">
+               <span id="all-btn" class="filter-btn">All</span>
+               <span> | </span>
+               <span id="active-btn" class="filter-btn">Active</span>
+               <span> | </span>
+               <span id="completed-btn" class="filter-btn">Completed</span> 
+            </div>
+            <div class="counter">
+                <span class="count" id="taskCount">2 tasks left</span>
+            </div>
+         </div>
+         <div class="task-list">
+         </div>
+            </div>
+             <div id="settingsSection" class="hidden">
+             <h2>Settings</h2>
+            <div class="setting-row">
+              <label>Profile Image URL</label>
+              <input type="text" id="avatarInput" placeholder="Paste link here">
+              </div>
+                <button id="saveProfile">Save Changes</button>
+           </div>
+        </div>
+    </div>
+
+    </div>
+    <script src="./js/logic.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

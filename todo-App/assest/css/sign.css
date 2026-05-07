@@ -1,0 +1,608 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    background-color: rgba(35, 2, 35, 0.86);
+    background: linear-gradient(rgba(61, 53, 61, 0.705), rgba(41, 25, 41, 0.919));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+.container{
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    box-shadow:0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+}
+.container p:not(.error-msg){
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
+}
+.error-msg {
+    font-size: 11px;
+    color: #e53e3e;
+    min-height: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.error-msg.show {
+    max-height: 20px;
+    margin: 2px 0 0 4px;
+}
+.input-group {
+    width: 100%;
+    margin: 6px 0;
+}
+.input-group input {
+    margin: 0;
+    display: block;
+    width: 100%;
+}
+.container span{
+    font-size: 12px;
+    color:#36032c ;
+}
+form h1{
+    align-self: center;
+    color: #36032c;
+}
+.container a{
+    color: #36032c;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+    align-self: center;
+}
+.container button{
+    background-color:rgba(37, 5, 41, 0.538); 
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.container button.hidden{
+    background-color: transparent;
+    border-color: #36032c;
+    color: #36032c;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+button.hidden:hover{
+    background: rgba(38, 1, 28, 0.645);
+    color: #e9d6e5;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.container form{
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 100%;
+}
+span{
+    align-self: center;
+}
+.photo-upload-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin: 8px 0;
+}
+.avatar-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15); 
+    border: 2px solid rgba(54, 2, 46, 0.415);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+.avatar-circle:hover ,.avatar-circle span:hover{
+    border-color: rgba(89, 5, 46, 0.8);
+    color: #36032c;
+}
+.avatar-circle span {
+    font-size: 18px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+}
+.avatar-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.photo-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+}
+.photo-label strong {
+    display: block;
+    color: #4b013d;
+    font-size: 13px;
+    margin-bottom: 2px;
+}
+.upload-link {
+    color: #c084fc; 
+    cursor: pointer;
+    font-weight: 600;
+}
+.container input{
+    background: rgba(255, 255, 255, 0.2); 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+.container input::placeholder{
+    color: #36032c;
+}
+.form-container{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+.sign-in{
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+.container.active .sign-in{
+    transform: translateX(100%);
+}
+.sign-up{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+.container.active .sign-up{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+@keyframes move{
+    0%, 49.99%{
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100%{
+        opacity: 1;
+        z-index: 5;
+    }
+}
+.social-icons{
+    align-self: center;
+    margin: 20px 0;
+}
+.social-icons a{
+    border: 1px solid #36032c;
+    border-radius: 20%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3px;
+    width: 40px;
+    height: 40px;
+}
+.social-icons a:hover{
+    box-shadow:0 0 10px 3px rgba(57, 1, 43, 0.503);
+}
+.initials-style{
+    font-size: 1rem;
+    color: #36032c;
+    font-weight: 500; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    height: 100%;
+}
+.alert-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.alert-box {
+    background: rgba(57, 1, 43, 0.503); 
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #4b0244;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    max-width: 400px;
+}
+
+.alert-box i { font-size: 3rem; color: #620956; margin-bottom: 15px; }
+.alert-box h3 { color: white; margin-bottom: 10px; }
+.alert-box p { color: #ccc; margin-bottom: 20px; }
+
+.alert-box button {
+    background: rgba(155, 117, 146, 0.503);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hiddenn { 
+    display: none;
+ } 
+.toggle-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 0;
+    z-index: 1000;
+}
+.container.active .toggle-container{
+    transform: translateX(-100%);
+    border-radius:  0;
+}
+
+.toggle{
+    height: 100%;
+    background: linear-gradient(to right,rgba(0, 0, 0, 0.35) ,rgba(0, 0, 0, 0.35)),url(./1324734-full-size-purple-butterfly-wallpaper-1920x1080-mobile.jpg);
+    color:#f1e1ee;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+.toggle-left h1{
+    position: absolute;
+    color:#36032c;
+    top: 10.6rem;
+}
+.toggle-left p{
+    position: absolute;
+    top: 13rem;
+    color:#36032c;
+    font-weight: 500;
+    padding:0 2rem;
+}
+.toggle-left button{
+    position: absolute;
+    top: 17.5rem;
+}
+.toggle-right h1{
+    position: absolute;
+    color:#36032c;
+    top: 10.6rem;
+}
+.toggle-right p{
+    position: absolute;
+    top: 13rem;
+    background: rgba(214, 210, 213, 0.503);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color:#36032c;
+    font-weight: 500;
+    padding:0 2rem;
+}
+.toggle-right .hidden1{
+    position: absolute;
+    top: 17.5rem;
+    background: transparent;
+    border-color: #944c86;
+    color: #7b5874;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+.hidden1:hover{
+    background: rgba(57, 1, 43, 0.503);
+    color: #e7d2e2;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.container.active .toggle{
+    transform: translateX(50%);
+}
+.toggle-panel{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+.toggle-left{
+    transform: translateX(-200%);
+}
+.container.active .toggle-left{
+    transform: translateX(0);
+}
+.toggle-right{
+    right: 0;
+    transform: translateX(0);
+}
+.container.active .toggle-right{
+    transform: translateX(200%);
+}
+
+#forgetModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 9, 18, 0.85); 
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    background: rgba(43, 27, 53, 0.9); 
+    padding: 3rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    width: 30rem;
+}
+
+.modal-content h3 {
+    color: #f6e0ef;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-content p {
+    color: #d1b8cc;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-bottom: 2px solid #9d50bb;
+    color: white;
+    outline: none;
+    border-radius: 0.4rem;
+}
+
+.modal-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+#checkUserBtn {
+    background: #9d50bb;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#closeModal {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+#forgetModal.active {
+    display: flex;
+}
+@media (max-width: 768px) {
+    body {
+        align-items: flex-start;
+        padding: 2rem;
+    }
+    .container {
+        width: 100vw;
+        min-height: 100svh;
+        border-radius: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+    .toggle-container {
+        position: relative ;
+        left: 0 ;
+        width: 100% ;
+        height: 240px ;
+        transform: none ;
+        transition: none ;
+        border-radius: 0 ;
+        z-index: 10;
+        flex-shrink: 0;
+    }
+
+    .toggle {
+        left: 0 ;
+        width: 100% ;
+        height: 240px ;
+        transform: none ;
+        transition: none ;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .toggle-panel {
+        width: 100% ;
+        height: 240px ;
+        position: absolute;
+        top: 0 ;
+        left: 0 ;
+        right: auto ;
+        padding: 20px ;
+        transition: none ;
+        transform: none ;
+        display: none;
+    }
+    .toggle-right {
+        display: flex ;
+        transform: none ;
+    }
+    .toggle-left {
+        display: none ;
+        transform: none;
+    }
+    .container.active .toggle-right {
+        display: none ;
+    }
+    .container.active .toggle-left {
+        display: flex ;
+    }
+    .toggle-left h1,
+    .toggle-right h1 {
+        position: static;
+        font-size: 22px ;
+        margin-bottom: 8px;
+        color: #e9d6e5;
+    }
+.photo-upload-row{
+    align-items: center;
+    justify-content: center;
+}
+    .toggle-left p,
+    .toggle-right p {
+        position: static ;
+        font-size: 13px ;
+        margin-bottom: 16px;
+        padding: 6px 12px ;
+    }
+
+    .toggle-left p{
+    background: rgba(214, 210, 213, 0.503);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    }
+  .toggle-left  .hidden{
+        position: static ;
+        width: 90%;
+        color: #fff ;
+        padding: 10px 32px;
+    background: rgba(247, 230, 242, 0.823);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    }
+    .toggle-right .hidden1 {
+       position: static ;
+       color: #fff;
+        width: 90%;
+        padding: 10px 32px;
+    }
+    .form-container {
+        position: relative ;
+        width: 100% ;
+        height: auto;
+        flex: 1;
+        transition: none ;
+    }
+
+    .sign-in,
+    .sign-up {
+        position: relative ;
+        width: 100% ;
+        left: 0 ;
+        top: 0 ;
+        height: auto ;
+        transform: none ;
+        transition: none ;
+    }
+    .sign-in {
+        display: flex;
+        opacity: 1;
+        z-index: 2;
+    }
+    .sign-up {
+        display: none;
+        opacity: 0;
+    }
+    .container.active .sign-in {
+        display: none ;
+        transform: none ;
+    }
+    .container.active .sign-up {
+        display: flex ;
+        opacity: 1 ;
+        transform: none ;
+        animation: none ;
+        z-index: 5;
+    }
+    .container form {
+        padding: 28px 20px ;
+        width: 100%;
+    }
+    .container button {
+        width: 100%;
+        padding: 12px ;
+    }
+    .container input {
+        padding: 12px 15px;
+    }
+}
