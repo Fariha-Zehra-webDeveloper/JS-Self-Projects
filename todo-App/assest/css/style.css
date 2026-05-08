@@ -32,7 +32,7 @@ body.dark-mode input:checked {
 }
 body{
     min-height: 100svh;
-    background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.7)),url('./1324734-full-size-purple-butterfly-wallpaper-1920x1080-mobile.jpg') ;
+    background: linear-gradient(to right, rgba(0,0,0,0.7),transparent), url('./1324734-full-size-purple-butterfly-wallpaper-1920x1080-mobile.jpg') ;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -40,6 +40,7 @@ body{
     transition: background 0.3s ease;
 }
 .container{
+    background: rgba(15, 5, 25, 0.60);
     display: flex;
     gap: 6rem;
     flex-direction:row;
@@ -53,12 +54,12 @@ body{
     border: none;
     font-size: 1.3rem;
     cursor: pointer;
-    color: var(--text-color);
+    color: white ;
 }
 .sidebar{
     width: 15rem;
     min-height: 100svh;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(239, 235, 235, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding:1.5rem ;
@@ -84,7 +85,7 @@ body{
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    border: 2px solid #8b5881;
+    border: 2px solid #3e0232;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,7 +109,11 @@ body{
 .email{
     font-size: .9rem;
     font-size: 700;
-    color: #3d032b;
+    color:white;
+    opacity: 1;
+}
+body.dark-mode .moon{
+    color: #eadbe3;
 }
 body.dark-mode .email{
     color:var(--text-color);
@@ -168,7 +173,7 @@ body.dark-mode .setting:hover ,body.dark-mode .logout:hover ,body.dark-mode .myT
     justify-content: flex-end;
 }
 .moon{
-    color: var(--text-color);
+    color: #3d032b;
     font-size: 2rem;
     background-color:transparent;
     border: none;
@@ -176,7 +181,7 @@ body.dark-mode .setting:hover ,body.dark-mode .logout:hover ,body.dark-mode .myT
     cursor: pointer;
 }
 .todolistapp{
-     display: flex;
+    display: flex;
     flex-direction: column;
     gap: 2rem;
     align-items: center;
@@ -186,6 +191,7 @@ body.dark-mode .setting:hover ,body.dark-mode .logout:hover ,body.dark-mode .myT
     margin-top: 3rem;
 }
 .heading{
+    text-shadow: 0 2px 20px rgba(245, 228, 228, 0.8);
     font-size: 2rem;
     font-weight: 700;
 }
@@ -197,12 +203,12 @@ body.dark-mode .setting:hover ,body.dark-mode .logout:hover ,body.dark-mode .myT
     width: 23rem;
     padding: .6rem 1rem;
     border: none;
+    font-size: 1rem;
     outline: none;
     color: var(--text-color);
-    border-bottom: 2px solid rgba(234, 214, 245, 0.9);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(234, 219, 227, 1);
+    background: rgba(15, 5, 25, 0.65);
+    backdrop-filter: blur(16px);
     border-radius: .6rem;
 }
 body.dark-mode .addbtn ,body.dark-mode #saveProfile{
@@ -218,26 +224,34 @@ body.dark-mode .addbtn:hover, body.dark-mode #saveProfile{
     border-radius: .6rem;
     font-size: 1rem;
     font-weight: 500;
-    color: white;
+    color: #3d032b;
     padding: .8rem 1.7rem;
     cursor: pointer;
-    background: rgba(35, 2, 42, 0.718);
+    background: rgba(234, 219, 227, 1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     transition: .3s ease;
+    box-shadow: 0 0 15px rgba(223, 213, 226, 0.3);
 }
 .addbtn:hover{
-    background-color: #eadbe3;
-    color: #3d032b;
+    background-color: #310224;
+    color: #f6e0ef;
 }
 .filters{
     display: flex;
     width: 30rem;
     gap: 0;
+     padding:.5rem 1rem;
+    border-radius: 10rem;
+     background: rgba(15, 5, 25, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     flex-direction: row;
     justify-content: space-between;
 }
 .filter-links{
+padding: 4px 14px;
+border-radius: 20px;
     color:var(--text-color);
 }
 .filter-btn{
@@ -251,11 +265,10 @@ body.dark-mode .filter-btn.active{
     font-weight: bold;
     text-decoration: none;
 }
-.counter{
-    color:var(--secondary-text);
-}
 .count{
+    text-shadow: 1px 1px 4px rgba(238, 161, 198, 0.91) ;
     cursor: pointer;
+    color: #f4d0ee;
 }
 .task-list{
  display: flex;
@@ -263,7 +276,7 @@ body.dark-mode .filter-btn.active{
  gap: 1rem;
 }
 .task-card{
-     border-bottom: 2px solid rgba(234, 214, 245, 0.9);
+     border: 1px solid rgba(234, 219, 227, 1);
      color: var(--text-color);
      display: flex;
      align-items: center;
@@ -272,9 +285,9 @@ body.dark-mode .filter-btn.active{
      width: 30rem;
      padding: .7rem 1rem;
      border-radius: .6rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(15, 5, 25, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 .right{
     display: flex;
@@ -338,6 +351,7 @@ body.dark-mode .edit-btn i:hover ,body.dark-mode .delete-btn i:hover{
     justify-content: center;
 }
 #settingsSection h2 {
+    text-shadow: 0 2px 20px rgba(245, 228, 228, 0.8);
     font-size: 2rem;
     font-weight: 700;
     color: var(--text-color);
@@ -350,34 +364,33 @@ body.dark-mode .edit-btn i:hover ,body.dark-mode .delete-btn i:hover{
     width: 30rem;
     padding: .7rem 1rem;
     border-radius: .6rem;
-    border-bottom: 2px solid rgba(234, 214, 245, 0.9);
-    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(234, 219, 227, 1);
+    background: rgba(42, 3, 81, 0.25);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    color: var(--text-color);
+    color: #f6e0ef;
 }
 .setting-row input[type="text"] {
     flex: 1;
     padding: .4rem .8rem;
     border: none;
     outline: none;
-    border-bottom: 2px solid rgba(234, 214, 245, 0.9);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(241, 235, 242, 0.718);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border-radius: .5rem;
     color: var(--text-color);
     font-family: 'Montserrat', sans-serif;
     font-size: .85rem;
+    color: #1c0214;
 }
 .setting-row input[type="text"]::placeholder {
-    color: #f6e0ef;
+    color: #1c0214;
 }
 #saveProfile {
     margin-top: 1rem;
     padding: .6rem 2rem;
-    background: rgba(35, 2, 42, 0.718);
-    color: white;
+    background: rgba(235, 216, 239, 0.718);
+    color: #310224;
     border: none;
     border-radius: .5rem;
     font-family: 'Montserrat', sans-serif;
@@ -405,9 +418,14 @@ body.dark-mode .setting-row input[type="text"] {
 @media (max-width: 768px) {
 
   .container {
+    min-height: 100vh;
     flex-direction: column;
     gap: 0;
   }
+  .moon{
+    color: #f0f0f0;
+   
+}
   .sidebar {
     position: fixed;
     top: 0;
@@ -432,7 +450,10 @@ body.dark-mode .setting-row input[type="text"] {
   .theme-toggle {
     margin: 1rem 0 0;
   }
-
+  .addbtn{
+    font-size: .9rem;
+    padding: .7rem;
+  }
   .todolistapp {
     align-items: stretch;
   }
@@ -444,12 +465,16 @@ body.dark-mode .setting-row input[type="text"] {
   .task {
     width: 100%;
     flex: 1;
+    font-size: .8rem;
     min-width: 0;
   }
-
+ .task::placeholder{
+    font-size: .65rem;
+ }
   .filters,
   .task-card {
     width: 100%;
+    font-size: .8rem;
   }
 
   .setting-row {
@@ -458,5 +483,14 @@ body.dark-mode .setting-row input[type="text"] {
 
   .heading {
     font-size: 1.6rem;
+    align-self: center;
   }
+  .filter-links{
+  
+    font-size: .8rem;
+  }
+  .count{
+    font-size: .8rem;
+  }
+
 }
